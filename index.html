@@ -1,0 +1,394 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Portfólio André Ancete</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: ficha de cadastro no topo, projetos em duas camadas (caso principal e projetos próprios), linha do tempo desenhada em escala real de 1994 a 2026. */
+:root {
+  --bg: #F1F5F4;
+  --surface: #FFFFFF;
+  --ink: #0E1B1A;
+  --ink-2: #425758;
+  --line: #CAD8D6;
+  --bar: #9FB6B3;
+  --accent: #0B5C61;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #DDEBEA;
+  --f-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --f-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B1514;
+    --surface: #111F1E;
+    --ink: #E4EEEC;
+    --ink-2: #9DB3B0;
+    --line: #26393A;
+    --bar: #3C5654;
+    --accent: #5CCFC4;
+    --accent-ink: #06201E;
+    --accent-soft: #123231;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B1514;
+  --surface: #111F1E;
+  --ink: #E4EEEC;
+  --ink-2: #9DB3B0;
+  --line: #26393A;
+  --bar: #3C5654;
+  --accent: #5CCFC4;
+  --accent-ink: #06201E;
+  --accent-soft: #123231;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.wrap {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.1; letter-spacing: -0.015em; }
+h2 { font-size: clamp(1.6rem, 3.2vw, 2.1rem); margin-bottom: 1.75rem; }
+h3 { font-size: 1.25rem; }
+p { margin: 0 0 1rem; max-width: 65ch; }
+.mono { font-family: var(--f-mono); }
+.label {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+/* topo */
+.top { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; justify-content: space-between; align-items: center; padding-block: 1.25rem; border-bottom: 1px solid var(--line); }
+.top .who { font-family: var(--f-display); font-weight: 700; font-size: 1.05rem; }
+.top nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; font-size: 0.9rem; }
+.top nav a { color: var(--ink-2); text-decoration: none; }
+.top nav a:hover { color: var(--accent); text-decoration: underline; }
+
+/* hero */
+.hero { display: grid; gap: 2.5rem; padding-block: clamp(2.5rem, 7vw, 5rem); align-items: end; }
+@media (min-width: 56rem) { .hero { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 4rem; } }
+.hero h1 { font-size: clamp(3rem, 9vw, 6rem); font-weight: 700; line-height: 0.95; letter-spacing: -0.03em; }
+.hero .lead { font-size: clamp(1.1rem, 2.2vw, 1.4rem); line-height: 1.45; margin: 1.5rem 0 0; max-width: 34ch; color: var(--ink); }
+.hero .lead em { font-style: normal; color: var(--accent); font-weight: 600; }
+.ficha { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 0.5rem 1.25rem; }
+.ficha div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px dashed var(--line); }
+.ficha div:last-child { border-bottom: 0; }
+.ficha dt { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); padding-top: 0.2rem; }
+.ficha dd { margin: 0; font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+
+/* chips */
+.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; margin: 0; padding: 0; }
+.chips li { font-family: var(--f-mono); font-size: 0.74rem; padding: 0.2rem 0.55rem; border: 1px solid var(--line); border-radius: 3px; color: var(--ink); background: var(--bg); }
+.feature .chips li { background: var(--surface); }
+
+/* caso principal */
+.feature { background: var(--accent-soft); border: 1px solid var(--line); border-radius: 4px; padding: clamp(1.25rem, 3vw, 2.25rem); display: grid; gap: 2rem; }
+@media (min-width: 56rem) { .feature { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 3rem; } }
+.feature header { grid-column: 1 / -1; }
+.feature h3 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0.4rem 0 0.25rem; }
+.feature .sub { color: var(--ink-2); margin: 0; }
+.feature h4 { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); margin: 0 0 0.6rem; font-weight: 500; }
+.feature .block + .block { margin-top: 1.5rem; }
+.facts { margin: 0 0 1.25rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: 1rem 1.5rem; }
+.facts div { min-width: 0; }
+.facts dt { font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); }
+.facts dd { margin: 0.15rem 0 0; font-family: var(--f-display); font-size: 1.35rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.note { font-size: 0.85rem; color: var(--ink-2); margin-top: 1.25rem; }
+.btn { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 600; font-size: 0.92rem; padding: 0.6rem 1rem; border-radius: 3px; border: 0; cursor: pointer; font-family: var(--f-body); }
+.btn:hover { text-decoration: underline; }
+.btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+
+/* projetos próprios */
+.sub-h { margin: 3rem 0 1rem; font-size: 1.1rem; }
+.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.9rem; min-width: 0; }
+.card h3 { font-size: 1.15rem; }
+.card p { margin: 0; font-size: 0.95rem; color: var(--ink-2); }
+.card .chips { margin-top: auto; }
+.card a.out { font-size: 0.9rem; font-weight: 600; overflow-wrap: anywhere; }
+
+/* linha do tempo em escala */
+.tl { display: grid; gap: 0.9rem; }
+.tl-row { display: grid; grid-template-columns: 14rem minmax(0, 1fr); gap: 0.75rem 1rem; align-items: center; }
+@media (max-width: 44rem) { .tl-row { grid-template-columns: minmax(0, 1fr); gap: 0.35rem; } }
+.tl-label { min-width: 0; }
+.tl-label strong { display: block; font-size: 0.95rem; }
+.tl-label span { display: block; font-size: 0.78rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.tl-track { position: relative; height: 1.35rem; background: linear-gradient(var(--line), var(--line)) center / 100% 1px no-repeat; }
+.bar { position: absolute; top: 0; bottom: 0; background: var(--bar); border-radius: 2px; min-width: 4px; overflow: hidden; }
+.bar.main { background: var(--accent); color: var(--accent-ink); font-family: var(--f-mono); font-size: 0.72rem; line-height: 1.35rem; padding-left: 0.6rem; white-space: nowrap; }
+.tl-axis { display: grid; grid-template-columns: 14rem minmax(0, 1fr); gap: 0 1rem; margin-top: 0.25rem; }
+@media (max-width: 44rem) { .tl-axis { grid-template-columns: minmax(0, 1fr); } .tl-axis > :first-child { display: none; } }
+.axis-track { position: relative; height: 1.6rem; }
+.tick { position: absolute; top: 0; padding-left: 0.3rem; border-left: 1px solid var(--ink-2); font-family: var(--f-mono); font-size: 0.7rem; color: var(--ink-2); line-height: 1.5rem; }
+
+.two { display: grid; gap: 2rem; margin-top: 3rem; }
+@media (min-width: 48rem) { .two { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; } }
+.plain { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.6rem; font-size: 0.95rem; }
+.plain strong { font-weight: 600; }
+.plain span { color: var(--ink-2); }
+
+/* competências */
+.skills { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.skills div { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 0.5rem 1.5rem; padding: 0.9rem 0; border-bottom: 1px solid var(--line); }
+@media (max-width: 40rem) { .skills div { grid-template-columns: minmax(0, 1fr); } }
+.skills dt { font-weight: 600; font-size: 0.95rem; }
+.skills dd { margin: 0; }
+
+/* contato */
+.contact { background: var(--ink); color: var(--bg); }
+.contact h2 { color: var(--bg); }
+.contact .mail { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.4rem, 4.5vw, 2.4rem); overflow-wrap: anywhere; user-select: all; margin: 0 0 1.25rem; }
+.contact .row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+.contact .btn { background: var(--bg); color: var(--ink); }
+.contact .btn.ghost { background: transparent; color: var(--bg); border: 1px solid var(--bg); }
+.contact p { color: color-mix(in srgb, var(--bg) 75%, var(--ink)); margin-top: 1.5rem; font-size: 0.9rem; }
+#copy-state { font-size: 0.85rem; min-height: 1.2em; }
+footer { padding-block: 1.5rem; font-size: 0.8rem; color: var(--ink-2); }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+
+<header class="wrap top">
+  <span class="who">André Ancete</span>
+  <nav aria-label="Seções">
+    <a href="#projetos">Projetos</a>
+    <a href="#trajetoria">Trajetória</a>
+    <a href="#competencias">Competências</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <p class="label" style="margin-bottom:1.25rem">Desenvolvedor back-end e full stack sênior</p>
+      <h1>André Ancete</h1>
+      <p class="lead">Sistemas de gestão pública, do <em>Delphi</em> ao <em>Angular</em>. Vinte e seis anos entregando software que prefeituras usam todos os dias.</p>
+    </div>
+    <dl class="ficha">
+      <div><dt>Último cargo</dt><dd>Coordenador de Desenvolvimento, Fiorilli Software</dd></div>
+      <div><dt>Período</dt><dd>dez/1999 a set/2026</dd></div>
+      <div><dt>Equipe</dt><dd>20 programadores</dd></div>
+      <div><dt>Stack atual</dt><dd>Angular, React, TypeScript, PHP, MySQL, Supabase</dd></div>
+      <div><dt>Base</dt><dd>Delphi, Firebird, APIs REST</dd></div>
+      <div><dt>Busco</dt><dd>Back-end, full stack ou análise de sistemas, em GovTech ou outros setores, trabalho remoto</dd></div>
+    </dl>
+  </div>
+
+  <section id="projetos" class="wrap">
+    <h2>Projetos</h2>
+
+    <article class="feature">
+      <header>
+        <p class="label">Caso principal · Fiorilli Software</p>
+        <h3>SCPI, Sistema de Contabilidade Pública Integrado</h3>
+        <p class="sub">Contabilidade e gestão para prefeituras, câmaras e outros órgãos públicos.</p>
+      </header>
+
+      <div>
+        <div class="block">
+          <h4>Meu papel</h4>
+          <p>Liderei a equipe de 20 programadores responsável pelo SCPI, com Delphi, uniGUI na versão web e APIs REST em Horse, organizada em Scrum e Kanban.</p>
+          <p>Atuei no desenvolvimento e na manutenção da prestação de contas eletrônica aos Tribunais de Contas: AUDESP, SIGAP, SIMAM e SAGRES.</p>
+          <p>Ao longo dos 26 anos, conduzi centenas de análises e planos de implementação para necessidades diferentes do sistema.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>Alcance</dt><dd>1 em cada 5 municípios</dd></div>
+          <div><dt>Equipe</dt><dd>20 programadores</dd></div>
+          <div><dt>Versões</dt><dd>Desktop e Web</dd></div>
+        </dl>
+        <ul class="chips" aria-label="Tecnologias">
+          <li>Delphi</li><li>Firebird</li><li>uniGUI</li><li>Horse</li><li>Scrum</li><li>Kanban</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="block">
+          <h4>O sistema, segundo a página oficial</h4>
+          <ul class="chips">
+            <li>Contas</li><li>Compras</li><li>Patrimônio</li><li>Diário e Razão (PCASP, MCASP)</li><li>Ensino</li><li>LRF (LC 101)</li><li>Almoxarifado</li><li>Frotas</li><li>Portal da Transparência</li><li>Orçamento</li><li>PPA e LDO</li>
+          </ul>
+        </div>
+        <div class="block">
+          <h4>Integrações com sistemas externos</h4>
+          <ul class="chips">
+            <li>SIOPE</li><li>SIOPS</li><li>SINCO</li><li>MANAD</li><li>SPED</li><li>Borderô bancário</li>
+          </ul>
+        </div>
+        <p style="margin-top:1.5rem"><a class="btn" href="https://fiorilli.com.br/sistemas/scpi-sistema-de-contabilidade-publica-integrado" target="_blank" rel="noopener">Ver telas e catálogo na página oficial ↗</a></p>
+        <p class="note">Descrição baseada na página pública do produto. O código-fonte pertence à Fiorilli Software e não está neste portfólio.</p>
+      </div>
+    </article>
+
+
+    <h3 class="sub-h">Projetos próprios no ar</h3>
+    <div class="grid">
+      <article class="card">
+        <h3>Allcuidare</h3>
+        <p>Gestão de cuidados com idosos: cadastro de pacientes, agenda, prontuário e controle de medicação.</p>
+        <ul class="chips"><li>Angular</li><li>PHP</li><li>MySQL</li><li>VPS própria</li><li>GitHub Actions</li></ul>
+        <a class="out" href="https://allcuidare.ifware.com.br/" target="_blank" rel="noopener">allcuidare.ifware.com.br ↗</a>
+      </article>
+      <article class="card">
+        <h3>Ramona Pratas</h3>
+        <p>Loja virtual de semijoias e prata, com catálogo de produtos e vendas online.</p>
+        <ul class="chips"><li>Angular</li><li>PHP</li><li>MySQL</li><li>VPS própria</li><li>GitHub Actions</li></ul>
+        <a class="out" href="https://ramonapratas.com.br/joias-pratas" target="_blank" rel="noopener">ramonapratas.com.br ↗</a>
+      </article>
+      <article class="card">
+        <h3>Férias na Equipe</h3>
+        <p>Sistema de RH para planejar férias, controlar ausências e acompanhar indicadores da equipe: dashboard com KPIs e gráficos, timeline Gantt mensal, calendário, cadastro de funcionários com ficha em PDF, controle de ocorrências e perfis de acesso (Admin, Gestor de Departamento e Colaborador).</p>
+        <ul class="chips"><li>React</li><li>TypeScript</li><li>Vite</li><li>Tailwind CSS</li><li>Supabase</li><li>PostgreSQL</li><li>Vercel</li></ul>
+        <a class="out" href="https://ferias-na-equipe.vercel.app/#/showcase" target="_blank" rel="noopener">ver showcase (dados fictícios) ↗</a>
+      </article>
+      <article class="card">
+        <h3>An7 Money</h3>
+        <p>Projeto pessoal para controle de finanças pessoais, com login e dados na nuvem.</p>
+        <ul class="chips"><li>React</li><li>Supabase</li><li>PostgreSQL</li><li>Vercel</li></ul>
+        <a class="out" href="https://an7-money.vercel.app/auth" target="_blank" rel="noopener">an7-money.vercel.app ↗</a>
+      </article>
+    </div>
+    <p class="note" style="margin-top:1.25rem">Os repositórios no GitHub são privados. O código fica disponível sob solicitação, em processo seletivo.</p>
+  </section>
+
+  <section id="trajetoria" class="wrap">
+    <h2>Trajetória, em escala</h2>
+    <div class="tl" role="img" aria-label="Linha do tempo de 1994 a 2026: iniciação científica na PUC-SP, estágios na IBM e na Dinheiro Vivo, Porto e Moraes, UNIVAR e 26 anos e 9 meses na Fiorilli Software.">
+      <div class="tl-row">
+        <div class="tl-label"><strong>PUC-SP, iniciação científica</strong><span>abr/1994 a abr/1995 · C++, QNX</span></div>
+        <div class="tl-track"><span class="bar" style="left:0.76%;width:3.03%"></span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-label"><strong>Dinheiro Vivo, estágio</strong><span>out/1995 a out/1996 · Notes VIP, Visual Basic</span></div>
+        <div class="tl-track"><span class="bar" style="left:5.3%;width:3.03%"></span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-label"><strong>IBM, estágio</strong><span>dez/1995 a fev/1996 · suporte técnico</span></div>
+        <div class="tl-track"><span class="bar" style="left:5.8%;width:0.7%"></span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-label"><strong>Porto &amp; Moraes</strong><span>nov/1996 a fev/1998 · Visual Basic, Delphi</span></div>
+        <div class="tl-track"><span class="bar" style="left:8.58%;width:3.79%"></span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-label"><strong>UNIVAR</strong><span>jun/1998 a dez/1999 · Delphi, aulas</span></div>
+        <div class="tl-track"><span class="bar" style="left:13.4%;width:4.55%"></span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-label"><strong>Fiorilli Software</strong><span>dez/1999 a set/2026 · Delphi, Firebird, uniGUI, Horse</span></div>
+        <div class="tl-track"><span class="bar main" style="left:17.9%;width:81.1%">26 anos e 9 meses</span></div>
+      </div>
+      <div class="tl-axis" aria-hidden="true">
+        <div></div>
+        <div class="axis-track">
+          <span class="tick" style="left:0%">1994</span>
+          <span class="tick" style="left:18.18%">2000</span>
+          <span class="tick" style="left:48.48%">2010</span>
+          <span class="tick" style="left:78.78%">2020</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="two">
+      <div>
+        <h3 style="margin-bottom:1rem">Formação</h3>
+        <ul class="plain">
+          <li><strong>PUC-SP</strong><br><span>Bacharelado em Ciência da Computação, 1996</span></li>
+          <li><strong>UNG, Universidade de Guarulhos</strong><br><span>Pós-graduação em Redes, 1999</span></li>
+          <li><strong>Scrum Foundation Professional Certificate</strong><br><span>CertiProf</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem">Cursos</h3>
+        <ul class="chips">
+          <li>Docker</li><li>Linux</li><li>Jenkins</li><li>Swagger</li><li>Go</li><li>Flask</li><li>Ruby on Rails 5</li><li>Kanban</li>
+        </ul>
+        <p class="note">Cursos concluídos em 2020 e 2021.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="competencias" class="wrap" style="padding-top:0">
+    <h2>Competências</h2>
+    <dl class="skills">
+      <div><dt>Linguagens</dt><dd>Delphi (Object Pascal), PHP, SQL, TypeScript e JavaScript</dd></div>
+      <div><dt>Back-end e APIs</dt><dd>APIs REST (Horse), Swagger e OpenAPI</dd></div>
+      <div><dt>Front-end</dt><dd>uniGUI, Angular, React, Tailwind CSS</dd></div>
+      <div><dt>Bancos de dados</dt><dd>Firebird, MySQL, PostgreSQL, Supabase</dd></div>
+      <div><dt>Entrega e infraestrutura</dt><dd>GitHub Actions, Jenkins, Docker, Linux, administração de VPS, Vercel</dd></div>
+      <div><dt>Metodologia</dt><dd>Scrum (certificado), Kanban, gestão de backlog, liderança de equipe</dd></div>
+      <div><dt>Domínio de negócio</dt><dd>Contabilidade pública (PCASP, MCASP), Lei de Responsabilidade Fiscal, prestação de contas a Tribunais de Contas, arquivos XML</dd></div>
+    </dl>
+  </section>
+
+  <section id="contato" class="contact">
+    <div class="wrap">
+      <h2>Vamos conversar</h2>
+      <p class="mail" id="mail">andreancete@gmail.com</p>
+      <div class="row">
+        <button class="btn" id="copy" type="button">Copiar e-mail</button>
+        <a class="btn ghost" href="https://www.linkedin.com/in/andr%C3%A9-ancete-35084620" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <span id="copy-state" role="status" aria-live="polite"></span>
+      </div>
+      <p>Disponível para trabalho remoto como desenvolvedor back-end, full stack ou analista de sistemas.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">André Ancete · Portfólio</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy');
+  var mail = document.getElementById('mail');
+  var state = document.getElementById('copy-state');
+  function selectMail() {
+    var r = document.createRange();
+    r.selectNodeContents(mail);
+    var s = window.getSelection();
+    s.removeAllRanges();
+    s.addRange(r);
+  }
+  btn.addEventListener('click', function () {
+    var text = mail.textContent.trim();
+    function fallback() {
+      selectMail();
+      state.textContent = 'Selecionado. Use Ctrl+C para copiar.';
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () {
+        state.textContent = 'E-mail copiado.';
+      }, fallback);
+    } catch (e) {
+      fallback();
+    }
+  });
+})();
+</script>
+
+</body></html>
